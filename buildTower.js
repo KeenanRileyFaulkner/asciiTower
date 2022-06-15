@@ -1,7 +1,7 @@
 //this solution is a bit verbose, but performs better because it builds off a base case; it does not have to touch every character of every string in the array.
 //the replace() helper method will only edit each character in the string a max of one time.
 
-
+const TOWER_CHAR = '|'
 const buildTower = height => {
     //checking range of height not required, but practical. If the statement were omitted, 0 and negative numbers would produce an empty array.
     if(height < 1) {
@@ -21,7 +21,7 @@ const buildTower = height => {
     //create base layer of tower
     let base = '';
     for(let i = 0; i < width; ++i) {
-        base += '*';
+        base += TOWER_CHAR;
     }
     answer.push(base);
     //base now is '***...*' to desired num of chars.
